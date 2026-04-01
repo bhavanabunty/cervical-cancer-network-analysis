@@ -1,0 +1,171 @@
+---
+title: "Network-Based Pathway Enrichment Analysis in Cervical Cancer"
+subtitle: "Master's Degree Project in Bioinformatics – University of Skövde"
+author: "Bhavana Chowdary Kothapalli"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    theme: flatly
+    highlight: tango
+    number_sections: true
+  pdf_document:
+    toc: true
+    toc_depth: 3
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo    = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  fig.width  = 10,
+  fig.height = 7
+)
+set.seed(123)
+```
+
+# Overview
+
+This R Markdown document executes the complete analysis pipeline for the
+Master's thesis:
+
+> *Network-Based Pathway Enrichment Analysis to Improve Molecular Insight
+> in Cervical Cancer*
+
+All 12 analysis scripts are sourced in sequence. Results are saved to
+the `outputs/` directory.
+
+---
+
+# Setup: Load Libraries
+
+```{r libraries}
+library(GEOquery)
+library(Biobase)
+library(affy)
+library(preprocessCore)
+library(hgu133plus2.db)
+library(AnnotationDbi)
+library(limma)
+library(clusterProfiler)
+library(org.Hs.eg.db)
+library(GOSemSim)
+library(STRINGdb)
+library(igraph)
+library(ggplot2)
+library(ggrepel)
+library(pheatmap)
+
+dir.create("outputs",         showWarnings = FALSE, recursive = TRUE)
+dir.create("outputs/figures", showWarnings = FALSE, recursive = TRUE)
+dir.create("outputs/tables",  showWarnings = FALSE, recursive = TRUE)
+dir.create("outputs/rdata",   showWarnings = FALSE, recursive = TRUE)
+```
+
+---
+
+# Data Acquisition
+
+```{r data-acquisition, cache=TRUE}
+source("scripts/01_data_acquisition.R")
+```
+
+---
+
+# Quality Control
+
+```{r quality-control, cache=TRUE}
+source("scripts/02_quality_control.R")
+```
+
+---
+
+# Normalisation
+
+```{r normalisation, cache=TRUE}
+source("scripts/03_normalization.R")
+```
+
+---
+
+# Differential Expression Analysis
+
+```{r differential-expression, cache=TRUE}
+source("scripts/04_differential_expression.R")
+```
+
+---
+
+# GO Enrichment Analysis
+
+```{r go-enrichment, cache=TRUE}
+source("scripts/05_go_enrichment.R")
+```
+
+---
+
+# KEGG Pathway Enrichment
+
+```{r kegg-enrichment, cache=TRUE}
+source("scripts/06_kegg_enrichment.R")
+```
+
+---
+
+# STRING PPI Network Construction
+
+```{r string-network, cache=TRUE}
+source("scripts/07_string_network.R")
+```
+
+---
+
+# Network Topological Analysis
+
+```{r network-topology, cache=TRUE}
+source("scripts/08_network_topology.R")
+```
+
+---
+
+# Hub Gene Identification
+
+```{r hub-genes, cache=TRUE}
+source("scripts/09_hub_identification.R")
+```
+
+---
+
+# Functional Module Detection
+
+```{r modules, cache=TRUE}
+source("scripts/10_module_detection.R")
+```
+
+---
+
+# Comparative Analysis
+
+```{r comparative, cache=TRUE}
+source("scripts/11_comparative_analysis.R")
+```
+
+---
+
+# Final Visualisation
+
+```{r visualisation, cache=TRUE}
+source("scripts/12_visualization.R")
+```
+
+---
+
+# Session Information
+
+```{r session-info}
+sessionInfo()
+```
