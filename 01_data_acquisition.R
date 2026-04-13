@@ -2,10 +2,10 @@
 # Script 01: Data Acquisition
 # Project: Network-Based Pathway Enrichment in Cervical Cancer
 # Author:  Bhavana Chowdary Kothapalli
-# Date:    2025
+# Date:    2026
 # ============================================================
 # PURPOSE:
-#   Downloads the GSE63514 dataset from NCBI GEO and saves
+#   Downloads the GSE7803 dataset from NCBI GEO and saves
 #   the raw expression set for downstream processing.
 # ============================================================
 
@@ -21,11 +21,11 @@ dir.create("outputs/figures", showWarnings = FALSE, recursive = TRUE)
 dir.create("outputs/tables",  showWarnings = FALSE, recursive = TRUE)
 dir.create("outputs/rdata",   showWarnings = FALSE, recursive = TRUE)
 
-# ── 3. Download GSE63514 from GEO ───────────────────────────
-cat("Downloading GSE63514 from NCBI GEO...\n")
+# ── 3. Download GSE7803 from GEO ───────────────────────────
+cat("Downloading GSE7803 from NCBI GEO...\n")
 
 gse <- getGEO(
-  GEO        = "GSE63514",
+  GEO        = "GSE7803",
   GSEMatrix  = TRUE,
   AnnotGPL   = TRUE,
   destdir    = "outputs/rdata/"
