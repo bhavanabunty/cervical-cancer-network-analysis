@@ -13,7 +13,7 @@ This repository contains the complete, reproducible bioinformatics workflow for 
 
 > *Network-Based Pathway Enrichment Analysis to Improve Molecular Insight in Cervical Cancer*
 
-The study integrates conventional GO/KEGG enrichment with protein-protein interaction (PPI) network analysis applied to the GSE63514 cervical cancer microarray dataset (14 normal vs. 15 tumour samples; Affymetrix HG-U133 Plus 2.0).
+The study integrates conventional GO/KEGG enrichment with protein-protein interaction (PPI) network analysis applied to the GSE7803 cervical cancer microarray dataset (10 normal vs. 21 tumour samples; Affymetrix HG-U133 Plus 2.0).
 
 ---
 
@@ -123,11 +123,11 @@ Full session information is provided in `session_info.txt`.
 
 ## Data
 
-The GSE63514 dataset is downloaded programmatically from NCBI GEO in script `01_data_acquisition.R`. No manual download is required. All data used is publicly available and de-identified.
+The GSE7803 dataset is downloaded programmatically from NCBI GEO in script `01_data_acquisition.R`. No manual download is required. All data used is publicly available and de-identified.
 
-- **GEO Accession:** GSE63514  
+- **GEO Accession:** GSE7803  
 - **Platform:** Affymetrix Human Genome U133 Plus 2.0 Array (GPL570)  
-- **Samples:** 14 normal cervical epithelium + 15 cervical squamous cell carcinoma  
+- **Samples:** 10 normal cervical epithelium + 21 cervical squamous cell carcinoma  
 - **Source:** den Boon et al. (2015), PNAS
 
 ---
