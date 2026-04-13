@@ -3,7 +3,7 @@
 **Author:** Bhavana Chowdary Kothapalli  
 **Institution:** University of Skövde, Sweden  
 **Programme:** Master's in Bioinformatics (Second Cycle, 30 credits)  
-**Term:** Spring 2025  
+
 
 ---
 
